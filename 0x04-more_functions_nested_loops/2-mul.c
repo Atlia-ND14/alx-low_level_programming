@@ -1,12 +1,10 @@
 #include "main.h"
 /**
- * @mul - multiplies two intigers
  * @a is an intiger
  * @b is an intiger
- * Return : always 0
+ * Return : mutiplies two numbers
  */
 int mul(int a, int b);
 {
-	mul = a * b;
-	return (0);
+	return = (a * b);
 }
