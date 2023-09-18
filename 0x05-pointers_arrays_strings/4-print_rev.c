@@ -1,5 +1,5 @@
 #include "main.h"
-#include <string.h>
+
 /**
 * print_rev - a function that prints a string, in reverse
  * fcounter is to first count to end, n is to count back
@@ -8,11 +8,17 @@
  */
 void print_rev(char *s)
 {
-	int len = strlen(s);
+	int fcounter = 0;
+	int i, n;
 
-	for (int i = len - 1; i >= 0; i--)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		_putchar(s[i]);
+		fcounter++;
+	}
+
+	for (n = (fcounter - 1); n >= 0; n--)
+	{
+		_putchar(s[n]);
 	}
 	_putchar('\n');
 }
