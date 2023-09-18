@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <string.h>
 /**
 * print_rev - a function that prints a string, in reverse
  * fcounter is to first count to end, n is to count back
