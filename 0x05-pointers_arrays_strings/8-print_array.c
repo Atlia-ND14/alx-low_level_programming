@@ -13,7 +13,7 @@ for (inc = 0; inc < n ; inc++)
 if (inc != n - 1)
 printf("%d, ", a[inc]);
 else
-_purchar("%d", a[inc]);
+_putchar("%d", a[inc]);
 
 }
 _putchar("\n");
