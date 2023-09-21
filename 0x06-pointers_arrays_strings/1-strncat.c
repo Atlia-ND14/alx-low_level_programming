@@ -5,7 +5,7 @@
  * @src: source
  * @n:number of bytes
  */
-char *_strncat(char *dest, char *src, int n);
+char *_strncat(char *dest, char *src, int n)
 {
 int a, b;
 a = 0;
@@ -21,7 +21,6 @@ while (b < n && src[b] != '\0')
 	a++;
 	b++;
 }
-dest[a] != '\0';
 
 return (dest);
 }
