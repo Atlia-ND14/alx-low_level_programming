@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * cap_string - function that capitalizes all words of a string
+ * cap_string- function that capitalizes all words of a string
  * @n: string
  * Return: separator
  */
-char *cap_string(char *)
+char *cap_string(char *n)
 {
 	int i, x;
 	int cap = 32;
