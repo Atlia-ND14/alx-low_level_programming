@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
 *print_array - print n element of array
 *@a: array
@@ -7,14 +8,15 @@
 */
 void print_array(int *a, int n)
 {
-int inc;
-for (inc = 0; inc < n ; inc++)
-{
-if (inc != n - 1)
-printf("%d, ", a[inc]);
-else
-_putchar("%d", a[inc]);
+	int i;
 
-}
-_putchar("\n");
+	for (i = 0; i < n ; i++)
+	{
+		printf("%d, ", a[i]);
+		if (i != n - 1)
+		{
+			printf(", ");
+		}
+	}
+	printf("\n");
 }
