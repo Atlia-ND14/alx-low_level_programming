@@ -5,7 +5,7 @@
  * @s: string
  * Return: a pointer or NULL
  */
-char *_strchr(char *s, char c);
+char *_strchr(char *s, char c)
 {
 	while (*s != '/0' && *s != c)
 	{
