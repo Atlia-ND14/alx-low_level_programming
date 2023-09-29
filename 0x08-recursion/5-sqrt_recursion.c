@@ -5,7 +5,7 @@
  * x: num
  * Return: 0 or 1
  */
-int _sqrt_recursion(int n)
+int _sqrt_recursion(int x, int n)
 {
 	if (x * x == n)
 
