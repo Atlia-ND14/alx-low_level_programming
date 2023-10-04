@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stddef.h>
+#include <stdio.h>
 /**
  * _strdup - returns a pointer to a newly allocated space
  * @str:string to be reterned

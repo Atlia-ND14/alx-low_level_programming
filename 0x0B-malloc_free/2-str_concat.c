@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stddef.h>
+#include <stdio.h>
 /**
  * str_concat - concatenate string
  * @s1: contentes ofs1
