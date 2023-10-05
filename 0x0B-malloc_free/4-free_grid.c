@@ -2,6 +2,7 @@
 #include <stdlib.h>
 /**
  * free_grid - frees a 2 dimensional grid
+ * @grid:elemnt
  * @height: elements
  * Return: alwys 0
  */
