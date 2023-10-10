@@ -8,8 +8,7 @@
  *
  * Return: Pointer to new dog
  */
-typedef struct dog dog_t;
-struct dog
+typedef struct dog dog_t;struct dog
 {
 	char *name;
 	float age;
