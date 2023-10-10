@@ -8,31 +8,31 @@
  *
  * Return: Pointer to new dog
  */
-typedef struct dog dog_t;struct dog
-{
-	char *name;
-	float age;
-	char *owner;
-};
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *dog = malloc(sizeof(dog_t));
-	if (dog == NULL)
-	{
+	dog_t *new_dog;
+	int len1, len2, i;
+
+	len1 = len2 = i = 0;
+	while (name[len1++] != '\0')
+		;
+	while (owner[len2++] != '\0')
+		;
+
+	new_dog = malloc(sizeof(dog_t));
+	if (new_dog == NULL)
 		return (NULL);
-	}
-	dog->name = strdup(name);
-	if (dog->name == NULL)
-	{
-		free(dog);
-		return (NULL);
-	}
-	if (dog->owner == NULL)
-	{
-		free(dog->name);
-		free(dog);
-		return NULL;
-	}
-	dog->age = age;
-	return (dog);
+
+	new_dog->name = malloc(len1);
+	new_dog->owner = malloc(len2);
+
+	do {
+		new_dog->name[i] = name[i];
+	} while (name[i++] != '\0');
+	i = 0;
+	do {
+		new_dog->owner[i] = owner[i];
+	} while (owner[i++] != '\0');
+	new_dog->age = age;
+	return (new_dog);
 }
