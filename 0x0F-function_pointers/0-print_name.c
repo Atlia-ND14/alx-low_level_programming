@@ -1,4 +1,5 @@
 #include "function_pointers.h"
+#include <stddef.h>
 /**
  * print_name - Sends the string to the function s
  * @name: String to send to function
