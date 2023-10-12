@@ -4,9 +4,9 @@
  * @name: String to send to function
  * @f: function to send string
  */
-void print_name(char *name, void (*f)(char *));
+void print_name(char *name, void (*f)(char *))
 {
-	if (f && name)
+	if (name && f)
 	{
 		f(name);
 	}
