@@ -1,80 +1,54 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
 #include "variadic_functions.h"
+#include <stdarg.h>
+#include <stdio.h>
 /**
- * _printC - Prints out a character
- * @valist: variable string to print
- * @s: separator to print
+ *  print_all - Prints anything
+ *
+ *  @format: List of args passed to function
+ *
+ *  Return: void
  */
-static void _printC(va_list valist, char *s)
-{
-	printf("%s%c", s, va_arg(valist, int));
-}
-/**
- * _printI - Prints out an integer
- * @valist: variable string to print
- * @s: separator to print
- */
-static void _printI(va_list valist, char *s)
-{
-	printf("%s%d", s, va_arg(valist, int));
-}
-/**
- * _printF - Prints out a float
- * @valist: variable string to print
- * @s: separator to print
- */
-static void _printF(va_list valist, char *s)
-{
-	printf("%s%f", s, va_arg(valist, double));
-}
-/**
- * _printS - Print out a string
- * @valist: variable string to print
- * @s: separator to print
- */
-static void _printS(va_list valist, char *s)
-{
-	char *s1;
 
-	s1 = va_arg(valist, char *);
-	if (s1 == NULL)
-		s1 = "(nil)";
-	printf("%s%s", s, s1);
-}
-/**
- * print_all - Prints a list accepting various types
- * @format: The format to print out the string
- */
 void print_all(const char * const format, ...)
 {
-	va_list valist;
-	int i, j;
-	char *s;
-	printer p[] = {
-		{"c", _printC},
-		{"i", _printI},
-		{"f", _printF},
-		{"s", _printS},
-		{"s", _printS}
-	};
-	va_start(valist, format);
+	char *str;
+	unsigned int i = 0, commaCheck = 0;
+	va_list ap;
 
-	j = 0;
-	s = "";
-	while (format != NULL && *(format + j) != '\0')
+	va_start(ap, format);
+
+	while (format && format[i])
 	{
-		i = 0;
-		while (i < 4 && *(format + j) != p[i].c[0])
-			i++;
-		if (i < 4)
+		if (commaCheck)
+			printf(", ");
+
+		switch (format[i])
 		{
-			p[i].f(valist, s);
-			s = ", ";
+		case 'c':
+			printf("%c", va_arg(ap, int));
+			break;
+		case 'i':
+			printf("%i", va_arg(ap, int));
+			break;
+		case 'f':
+			printf("%f", va_arg(ap, double));
+			break;
+		case 's':
+			str = va_arg(ap, char*);
+			if (str)
+			{
+				printf("%s", str);
+				break;
+			}
+			printf("(nil)");
+			break;
+		default:
+			commaCheck = 0;
+			i++;
+			continue;
 		}
-		j++;
+		commaCheck = 1,	i++;
 	}
-	printf("\n");
-	va_end(valist);
+	putchar('\n');
+	va_end(ap);
 }
